@@ -1,0 +1,11 @@
+[Unit]
+Description=Reset NVIDIA GPU after system wake-up
+After=suspend.target
+StopWhenUnneeded=true
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/gpu-reset.sh
+
+[Install]
+WantedBy=systemd-suspend.service
